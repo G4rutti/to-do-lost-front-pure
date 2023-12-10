@@ -167,6 +167,7 @@ async function updateThings(){
         console.error("Error:", error)
     }
     await get()
+    closeModal()
 }
 
 async function getByName(nome){
