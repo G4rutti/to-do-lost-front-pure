@@ -21,6 +21,8 @@ function clearFields() {
 
 
 async function get() {
+    nome.value = ""
+    descricao.value = ""
     const APIResponse = await fetch('https://to-do-list-mongo-db-g4rutti.vercel.app/')
     if (APIResponse.status === 200) {
         const data = await APIResponse.json()
@@ -66,7 +68,7 @@ async function get() {
 
 async function post(){
     console.log(nome)
-    data = {
+    const data = {
         nome : nome.value,
         descricao : descricao.value,
         feito : "n"
@@ -88,7 +90,6 @@ async function post(){
         console.error("Error:", error)
     }
     await get()
-    window.location.reload()
 }
 
 async function deleteByName(nome){
@@ -107,7 +108,6 @@ async function deleteByName(nome){
         console.error("Error:", error)
     }
     await get()
-    window.location.reload()
 }
 
 async function updateDidOrNot(nome,descricao){
@@ -143,7 +143,6 @@ async function updateDidOrNot(nome,descricao){
         console.error("Error:", error)
     }
     await get()
-    window.location.reload()
 }
 
 async function updateThings(){
@@ -168,7 +167,6 @@ async function updateThings(){
         console.error("Error:", error)
     }
     await get()
-    window.location.reload()
 }
 
 async function getByName(nome){
