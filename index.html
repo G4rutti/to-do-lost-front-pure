@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>Lista de afazeres</h1>
+    <div class="sessoes">
+        <div class="formulario">
+            <div class="form-control">
+                <p class="title">Digite sua tarefa:</p>
+                <div class="input-field">
+                  <input required="" autocomplete="off" class="input" type="text" name="nome" id="nome"/>
+                  <label class="label" for="nome">Nome da atividade</label>
+                </div>
+                <div class="input-field">
+                  <input required="" autocomplete="off" class="input" type="text" name="descricao" id="descricao" />
+                  <label class="label" for="descricao">Descrição da atividade</label>
+                </div>
+                <input type="submit" class="submit-btn" id="enviar"/>
+            </div>
+        </div>
+        <div class="atividades" id="atividade">
+            <!-- <div class="form-control">
+                <p class="title">Nome da ativiade</p>
+                <p>Descrição</p>
+                <div class="actions">
+                    <button id="editar">Editar</button>
+                    <button id="excluir">Excluir</button>
+                    <button id="feito">Feito</button>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-content form-control">
+            <header class="modal-header">
+                <h2>Redefinir atividade</h2>
+                <span class="modal-close" id="modalClose">&#10006;</span>
+            </header>
+            <div class="input-field">
+                <input required="" class="input" type="text" name="nome" id="nomeModal2"/>
+                <input required="" autocomplete="off" class="input" type="text" name="nome" id="nomeModal"/>
+                <label class="label" for="nome">Nome da atividade</label>
+              </div>
+              <div class="input-field">
+                <input required="" autocomplete="off" class="input" type="text" name="descricao" id="descricaoModal" />
+                <label class="label" for="descricao">Descrição da atividade</label>
+              </div>
+            <footer class="modal-footer">
+                <button id="salvar" class="submit-btn">Salvar</button>
+                <button id="cancelar"class="submit-btn">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+    
+      
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
