@@ -23,7 +23,9 @@ function clearFields() {
 async function get() {
     nome.value = ""
     descricao.value = ""
-    const APIResponse = await fetch('https://to-do-list-mongo-db-g4rutti.vercel.app/')
+    // const APIResponse = await fetch('https://to-do-list-mongo-db-g4rutti.vercel.app/')
+    const APIResponse = await fetch('http://localhost:3001/')
+
     if (APIResponse.status === 200) {
         const data = await APIResponse.json()
         atividades.innerHTML = ""
@@ -75,7 +77,7 @@ async function post(){
     }
 
     try{
-        const APIResponse = await fetch('https://to-do-list-mongo-db-g4rutti.vercel.app/', {
+        const APIResponse = await fetch('http://localhost:3001/', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -94,7 +96,7 @@ async function post(){
 
 async function deleteByName(nome){
     try{
-        const APIResponse = await fetch(`https://to-do-list-mongo-db-g4rutti.vercel.app/${nome}`, {
+        const APIResponse = await fetch(`http://localhost:3001/${nome}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -128,7 +130,7 @@ async function updateDidOrNot(nome,descricao){
     }
 
     try{
-        const APIResponse = await fetch(`https://to-do-list-mongo-db-g4rutti.vercel.app/${data.nome}`, {
+        const APIResponse = await fetch(`http://localhost:3001/${data.nome}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -152,7 +154,7 @@ async function updateThings(){
         feito : "n"
     }
     try{
-        const APIResponse = await fetch(`https://to-do-list-mongo-db-g4rutti.vercel.app/${document.getElementById("nomeModal2").value}`, {
+        const APIResponse = await fetch(`http://localhost:3001/${document.getElementById("nomeModal2").value}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
